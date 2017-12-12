@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>打字游戏</title>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            margin: 80px auto;
+            height: 100%;
+            width: 100%;
+            background: #eee;
+        }
+
+        .main {
+            width: 1000px;
+            height: 100%;
+            margin: 0 auto;
+        }
+
+        .left {
+            width: 800px;
+            height: 100%;
+            float: left;
+            position: relative;
+            background: #ff2d52;
+            overflow: hidden;
+        }
+
+        .right {
+            width: 200px;
+            height: 100%;
+            background: #3ea2ff;
+            float: left;
+        }
+
+        .show {
+            width: 180px;
+            height: 40px;
+            border: 1px solid #4f0080;
+            margin: 30px auto;
+            text-align: center;
+            background: #615780;
+            border-radius: 8px;
+            overflow: hidden;
+            font-weight: 600;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .con {
+            background: #fff;
+
+        }
+
+        .guanqia {
+            width: 180px;
+            height: 40px;
+            border: 1px solid #4f0080;
+            margin: 30px auto;
+            text-align: center;
+            background: #615780;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .num {
+            background: #fff;
+        }
+
+        .shengming {
+            width: 180px;
+            height: 40px;
+            border: 1px solid #4f0080;
+            margin: 30px auto;
+            text-align: center;
+            background: #615780;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .zhi {
+            background: #fff;
+
+        }
+
+        .gongneng {
+            width: 180px;
+            height: 120px;
+            margin: 70px auto 0;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .start {
+            margin-top: 30px;
+            width: 180px;
+            height: 40px;
+            float: left;
+            background: #fff;
+            border-radius: 10px;
+            cursor: pointer;
+            color: #333;
+            font-weight: 600;
+
+        }
+
+        .zanting {
+            float: left;
+            width: 180px;
+            height: 40px;
+            background: #fff;
+            margin-top: 30px;
+            border-radius: 10px;
+            cursor: pointer;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .letter {
+            width: 80px;
+            height: 80px;
+            border: 2px solid pink;
+            text-align: center;
+            line-height: 80px;
+            position: absolute;
+            background: orange;
+            color: #000;
+            border-radius: 10px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .phb {
+            width: 180px;
+            height: 120px;
+            background: #fff;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 80px auto 0;
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <div class="left">
+    </div>
+    <div class="right">
+        <div class="show">
+            <div class="name">得分</div>
+            <div class="con" id="scor">0</div>
+        </div>
+        <div class="guanqia">
+            <div>关卡</div>
+            <div class="num" id="state">1</div>
+        </div>
+        <div class="shengming">
+            <div>生命</div>
+            <div class="zhi" id="life">5</div>
+        </div>
+        <div class="gongneng">
+            <div class="start">开始</div>
+            <div class="zanting">暂停</div>
+        </div>
+        <div class="phb">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+
+    class Game {
+        constructor(left, scor, state, life, phb) {
+            this.left = left;
+            this.num = 3;
+            this.state = state;
+            this.statenum = 1;
+            this.obj = {};
+            this.scornum = 0;
+            this.scor = scor;
+            this.speed = 5;
+            this.life = life;
+            this.lifenum = 5;
+            this.height = window.innerHeight;
+            this.st = null;
+            this.flag = true
+//            this.phb = phb;
+//            this.bastscor = localStorage.scor ? localStorage.scor : []
+        }
+
+        start() {
+            for (let i = 0; i < this.num; i++) {
+                this._createLetter()
+            }
+            this._move();
+            this._keydown()
+        }
+
+        _createLetter() {
+            let newdiv = document.createElement("div");
+            newdiv.className = "letter";
+            do {
+                var randomNum = Math.floor(Math.random() * 26 + 65);
+                var randomLetter = String.fromCharCode(randomNum)
+            }
+            while (this.obj[randomLetter]);
+
+            do {
+                var randomLeft = Math.random() * 720;
+            } while (this._checkLeft(randomLeft));
+
+            this.obj[randomLetter] = {left: randomLeft, ele: newdiv};
+
+            newdiv.style.left = randomLeft + "px";
+            let randomTop = Math.random() * 50;
+            newdiv.style.top = randomTop + "px";
+            newdiv.innerHTML = randomLetter;
+            this.left.appendChild(newdiv)
+        }
+
+        _checkLeft(left) {
+            for (let i in this.obj) {
+                if (left > this.obj[i].left - 80 && left < this.obj[i].left + 80
+                ) {
+                    return true
+                }
+            }
+        }
+
+        _move() {
+            this.st = setInterval(function () {
+                for (
+                    let i in this.obj
+                    ) {
+                    let top = this.obj[i].ele.offsetTop;
+                    top += this.speed;
+                    this.obj[i].ele.style.top = top + "px";
+
+                    if (top > this.height) {
+                        this.lifenum--;
+                        this.life.innerHTML = this.lifenum;
+                        this.left.removeChild(this.obj[i].ele);
+                        delete this.obj[i];
+                        this._createLetter();
+                        if (this.lifenum === 0) {
+                            this._gameover()
+                        }
+                    }
+                }
+            }.bind(this), 60)
+        }
+
+        _keydown() {
+            document.onkeydown = function (e) {
+                let kc = e.keyCode;
+                let letter = String.fromCharCode(kc);
+                if (this.obj[letter]) {
+                    this.left.removeChild(this.obj[letter].ele);
+                    delete this.obj[letter];
+                    this._createLetter();
+                    this.scornum++;
+                    this.scor.innerHTML = this.scornum;
+                    if (this.scornum % 10 === 0) {
+                        this._upstate()
+                    }
+                }
+            }.bind(this)
+        }
+
+        _upstate() {
+            this.statenum++;
+            this.state.innerHTML = this.statenum;
+            if (this.statenum <= 3) {
+                this._createLetter()
+            } else {
+                this.speed++;
+                this.speed.innerHTML = this.speed
+            }
+        }
+
+        _gameover() {
+            alert(`游戏得分:${this.scornum}`)
+//            if (this.bastscor.length < 3 || this.scornum > this.bastscor[2].scor) {
+//                let name;
+//                do {
+//                    name = prompt("请输入姓名")
+//                } while (name === "")
+//            }
+//            this.bastscor.push({name, scor: this.scornum})
+//            this.bastscor.sort(function (a, b) {
+//                if (a.scor > b.scor) {
+//                    return -1
+//                } else {
+//                    return 1
+//                }
+//            })
+//            if (this.bastscor.length < 3) {
+//                this.bastscor.pop()
+//            }
+//            localStorage.scor = JSON.stringify(this.bastscor)
+
+            this.left.innerHTML = "";
+            this.obj = {};
+            this.scornum = 0;
+            this.lifenum = 5;
+            this.scor.innerHTML = 1;
+            this.life.innerHTML = 5;
+            this.state.innerHTML = 0;
+            this.statenum = 1;
+            this.speed = 5;
+            clearInterval(this.st);
+            this.flag = true
+        }
+
+//        _updatephb(){
+//        }
+
+        _pause() {
+            clearInterval(this.st)
+        }
+
+        _run() {
+            this._move()
+        }
+    }
+
+    let life = document.querySelector("#life");
+    let scor = document.querySelector("#scor");
+    let state = document.querySelector("#state");
+    let left = document.querySelector(".left");
+    let phb = document.querySelectorAll(".phb span");
+
+    game = new Game(left, scor, state, life, phb);
+    let startbtn = document.querySelector(".start");
+    let prusebtn = document.querySelector(".zanting");
+
+    startbtn.onclick = function () {
+        if (game.flag) {
+            game.flag = false;
+            game.start();
+        }
+    };
+
+    let flag = true;
+    prusebtn.onclick = function () {
+        if (flag) {
+            game._pause();
+            this.innerHTML = "继续"
+        } else {
+            game._run();
+            this.innerHTML = "暂停"
+        }
+        flag = !flag
+    }
+
+
+</script>
+</html>

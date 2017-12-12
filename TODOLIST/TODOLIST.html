@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TUDOLIST</title>
+    <link rel="stylesheet" href="css/TUDOLIST.css">
+</head>
+<body>
+    <section>
+        <div class="leftbar">
+            <ul>
+                <h3 class="title">TODOLIST</h3>
+                <li><h3>查看待办事宜</h3></li>
+                <li><h3>查看完成事件</h3></li>
+            </ul>
+        </div>
+    </section>
+    <div class="main">
+        <ul class="con">
+            <li class="add">
+                <h3>添加新的事件</h3>
+                <label>
+                    <textarea autofocus class="textarea"></textarea>
+                    <div class="notice"><span>00</span>/40</div>
+                </label>
+                <div class="waitbtn">
+                    <input type="button" value="提交" class="btn submit">
+                    <input type="button" value="取消" class="btn">
+                </div>
+                <div class="close"><i class="iconfont">&#xe61a;</i></div>
+            </li>
+            <li class="wait items">
+                <h3>未完成事件</h3>
+                <div class="waitcon item">
+                   <ul class="waitList">
+                   </ul>
+               </div>
+                <div class="waitbtn">
+                    <input type="button" value="移动到已完成" class="btn movetobtn">
+                    <input type="button" value="添加" class="btn addbtn">
+                </div>
+            </li>
+            <li class="done items">
+                <h3>已完成事件</h3>
+                <div class="donecon item">
+                    <ul class="doneList"></ul>
+                </div>
+                <div class="waitbtn">
+                    <input type="button" value="移除" class="btn moveoutbtn">
+                    <input type="button" value="添加" class="btn addbtn">
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/TUDOLIST.js"></script>
+</html>
