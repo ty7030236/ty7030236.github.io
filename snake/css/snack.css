@@ -1,0 +1,255 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background: url(../img/background.jpg);
+}
+
+.box {
+    width: 100%;
+    height: 768px;
+    position: relative;
+}
+
+.exp {
+    width: 200px;
+    height: 200px;
+    border: 4px dashed #333;
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    margin-top: -100px;
+    box-shadow: 0 0 15px 5px #527298;
+    font-size: 18px;
+    padding: 10px;
+    color: #333;
+    font-weight: 700;
+    transform-translate: 5px;
+    border-radius: 10px;
+}
+
+.exp:hover {
+    transform: translateX(10px);
+    transition: all .2s;
+    cursor: pointer;
+}
+
+.scene {
+    width: 500px;
+    height: 500px;
+    border: 1px solid #ccc;
+    background: url(../img/timg.jpg);
+    position: absolute;
+    left: 560px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 5px #527298;
+}
+
+.scene:hover {
+    transform: scale(1.01, 1.01);
+    transition: all .2s;
+    cursor: pointer;
+}
+
+#btn1 {
+    position: absolute;
+    left: 320px;
+    top: 330px;
+    background: #569846;
+    border: 1px solid #fff;
+    font-weight: 700;
+    width: 150px;
+    height: 35px;
+    color: #fff;
+    font-size: 20px;
+    line-height: 35px;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.8;
+    border-radius: 10px;
+    letter-spacing: 6px;
+    font-family: 楷体_GB2312;
+}
+
+#btn2 {
+    position: absolute;
+    left: 320px;
+    top: 430px;
+    background: #569846;
+    border: 1px solid #fff;
+    width: 150px;
+    height: 35px;
+    font-weight: 700;
+    color: #fff;
+    font-size: 20px;
+    line-height: 35px;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.8;
+    border-radius: 10px;
+    letter-spacing: 6px;
+    font-family: 楷体_GB2312;
+}
+
+.btnbox-r {
+    position: absolute;
+    width: 150px;
+    height: auto;
+    right: 80px;
+    top: 180px;
+}
+
+.btnbox-r > input {
+    margin-bottom: 10px;
+}
+
+#btn3 {
+    float: left;
+    background: #569846;
+    border: 1px solid #fff;
+    width: 150px;
+    height: 35px;
+    font-weight: 700;
+    color: #fff;
+    font-size: 20px;
+    line-height: 35px;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.8;
+    border-radius: 10px;
+    letter-spacing: 6px;
+    font-family: 楷体_GB2312;
+}
+
+#btn4 {
+    float: left;
+    background: #569846;
+    border: 1px solid #fff;
+    width: 150px;
+    height: 35px;
+    font-weight: 700;
+    color: #fff;
+    font-size: 20px;
+    line-height: 35px;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.8;
+    border-radius: 10px;
+    letter-spacing: 6px;
+    font-family: 楷体_GB2312;
+}
+#btn6 {
+    float: left;
+    background: #569846;
+    border: 1px solid #fff;
+    width: 150px;
+    height: 35px;
+    font-weight: 700;
+    color: #fff;
+    font-size: 20px;
+    line-height: 35px;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.8;
+    border-radius: 10px;
+    letter-spacing: 6px;
+    font-family: 楷体_GB2312;
+}
+
+#btn5 {
+    float: left;
+    background: #569846;
+    border: 1px solid #fff;
+    width: 150px;
+    height: 35px;
+    font-weight: 700;
+    color: #fff;
+    font-size: 20px;
+    line-height: 35px;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.8;
+    border-radius: 10px;
+    letter-spacing: 6px;
+    font-family: 楷体_GB2312;
+}
+
+.phb {
+    background: #fff;
+    width: 150px;
+    height: 100px;
+    float: left;
+    padding: 15px 0;
+    opacity: 0.7;
+}
+
+.phb span {
+    display: block;
+    width: 150px;
+    margin: 8px 0;
+    padding-left: 8px;
+    font-family: "苹方", "微软雅黑", "Helvetica";
+    font-weight: 700;
+    color: orangered;
+}
+
+.state,.scor,.life{
+    width: 150px;
+    float: left;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    background: #eee;
+    border-radius: 10px;
+}
+
+#btn1:hover, #btn2:hover {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+h1 {
+    display: block;
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    font-size: 52px;
+    font-weight: bold;
+    font-family: 黑体;
+    letter-spacing: 10px;
+    left: 130px;
+    top: 120px;
+    text-align: center;
+    line-height: 60px;
+    color: #333;
+}
+
+.block {
+    width: 25px;
+    height: 25px;
+    box-sizing: border-box;
+    border: 1px solid #a4a4a4;
+    border-radius: 20%;
+    float: left;
+}
+
+.snackbody {
+    box-shadow: 0 0 15px 5px yellow;
+    background: url(../img/body.png) no-repeat;
+    background-size: 25px, 25px;
+}
+
+.snackhead {
+    background: url(../img/head.png) no-repeat;
+    background-size: 24px, 24px;
+
+}
+
+.food {
+    background: url(../img/food.png);
+    border-radius: 50%;
+}
