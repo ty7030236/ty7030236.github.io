@@ -1,4 +1,3 @@
-//2016.04.28.afternoon
 //1.解决类名获取的兼容函数
 //classname：所要找的类名
 //father:通过父元素来找这个类名（若不定义，则通过整个文档来找这个类名）
@@ -30,11 +29,6 @@
 		return false;//所有的比较结束以后，返回false
 	}
 
-
-
-
-
-//2016.05.03.afternoon
 //2.纯文本的兼容函数
 //obj:对象
 //val:要设置的内容（须为纯文本）
@@ -54,8 +48,6 @@
 		}
 	}
 
-
-//2016.05.03.afternoon
 //3.获取样式的兼容函数
 //obj:对象
 //attr:属性
@@ -101,11 +93,7 @@ function getStyle(obj,attr){
  	}
  }
 
-
-
-
  /*****************************************************************/
- // 2016.05.06
  //5、获取子元素的兼容函数
  function getChild(father,type){
  	type=type||"a";
@@ -125,7 +113,6 @@ function getStyle(obj,attr){
  	return arr;
  }
 
-
  // 6、获得子节点中的第一个
 function getFirst(father){
 	return getChild(father)[0];
@@ -141,8 +128,6 @@ function getFirst(father){
  	return getChild(father,type)[num];
 }
 
-
-//2016.05.07 
 //9.获取上一个兄弟节点的兼容函数
 //obj:一个元素节点
 function getUp(obj){
@@ -177,14 +162,7 @@ function getDown(obj){
 	return down;
 }
 
-//  //9、获得指定下标元素的下一个兄弟节点
-//  function getNext(father,type,num){
-//  	return getChild(father,type)[num+1];
-// }
-// //10、获得指定下标元素的上一个兄弟节点
-//  function getBefore(father,type,num){
-//  	return getChild(father,type)[num-1];
-// }
+//9、获得指定下标元素的下一个兄弟节点
 
 //11、插入到某个对象之后
 function insertAfter(father,newNode,obj){
@@ -196,11 +174,7 @@ function insertAfter(father,newNode,obj){
 	}
 	
 }
-
-
-
 /**********************************/
-// 2016.05.09
 //12、事件绑定的兼容函数
 function addEvent(obj,event,fun){
 	if(obj.addEventListener){
@@ -219,7 +193,6 @@ function deleteEvent(obj,event,fun){
 	}
 }
 
-//2016.05.09下午
 //14.滚轮事件
 function mouseWheel(obj,up,down){
 	if(obj.attachEvent){
@@ -253,7 +226,6 @@ function mouseWheel(obj,up,down){
 	}
 }
 
-//2016.05.10下午
 //15.hover
 //判断某个元素是否包含有另外一个元素
  function contains (parent,child) {
@@ -299,10 +271,9 @@ function hover (obj,overfun,outfun) {
  function getEvent (e) {
       return e||window.event;
  }
-/********************************/
 
 /**********************************/
-// 2016.05.11下午
+
 //16、事件对象阻止浏览器默认行为函数
 function preventDefault(e){
 	var ev=e||window.event

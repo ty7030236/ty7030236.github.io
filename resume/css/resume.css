@@ -2,15 +2,14 @@
     box-sizing: border-box;
 }
 
-ul, li, body, a, h1, h2, h3, h4, h5, p {
+ul, ol, dl, body, h1, h2, h3, h4, h5, h6, p, input, img, a {
     margin: 0;
     padding: 0;
     list-style: none;
     font-family: "微软雅黑";
     font-weight: 400;
     color: #6c7279;
-    text-decoration: none;
-
+    text-decoration: none !important;
 }
 
 body, html {
@@ -30,7 +29,7 @@ body, html {
     left: 0;
     top: 0;
     width: 100%;
-    z-index: 9999;
+    z-index: 999;
     background: rgba(0, 0, 255, 0.71);
 }
 
@@ -52,7 +51,7 @@ body, html {
     color: #fff;
     font-size: 24px;
     line-height: 24px;
-    font-family: 黑体;
+    font-family: "微软雅黑";
 }
 
 .navigation {
@@ -107,7 +106,6 @@ body, html {
 }
 
 .banner-text-box {
-    margin-left: 95px;
     padding: 15px;
 }
 
@@ -126,7 +124,6 @@ body, html {
     margin-top: 20px;
     margin-bottom: 10px;
     text-align: center;
-    heigth: 100%;
 }
 
 .banner-text > h3 {
@@ -136,7 +133,7 @@ body, html {
     font-weight: lighter;
     line-height: 38px;
     margin-bottom: 30px;
-    letter-spacing: 0px;
+    letter-spacing: 0;
 }
 
 .banner-text > .btn {
@@ -153,7 +150,7 @@ body, html {
     font-weight: 400;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1170px) {
     .navigation > a.nav-toggle {
         display: block;
     }
@@ -167,7 +164,7 @@ body, html {
 /*主体开始*/
 /*feature开始*/
 #features {
-    padding: 0 100px;
+    padding: 0 80px;
     overflow: hidden;
 }
 
@@ -177,18 +174,40 @@ body, html {
     padding-left: 15px;
 }
 
+@media screen and (max-width: 997px) {
+    .feature:nth-child(3), .feature:nth-child(6) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .feature:nth-child(3), .feature:nth-child(6), .feature:nth-child(2), .feature:nth-child(4) {
+        display: none;
+    }
+}
+
 .headingsyle {
     width: 85%;
-    margin: 0px auto 20px auto;
+    margin: 0 auto 20px;
 }
 
 .headingsyle > h1 {
     position: relative;
     text-align: center;
     font-size: 35px;
-    font-weight: bold;
-    color: #FFFFFF;
     margin-bottom: 50px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.headingsyle > h1 > span {
+    background: #6600CC;
+    padding: 0 15px 0;
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
 }
 
 .headingsyle > h1:before {
@@ -201,11 +220,15 @@ body, html {
     width: 100%;
 }
 
-.headingsyle > h1 > span {
-    background: #6600CC;
-    padding: 0 15px;
-    position: relative;
-    z-index: 1;
+@media screen and (max-width: 768px) {
+    .headingsyle > h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .headingsyle > h1 > span {
+        font-size: 28px;
+    }
 }
 
 .feature-content {
@@ -213,17 +236,19 @@ body, html {
     padding: 0 15px;
     margin-top: 30px;
     text-align: center;
+    max-height: 80px;
 }
 
 .feature-content > h5 {
-    font-size: 16px;
+    padding-top: 10px;
+    font-size: 18px;
     color: #2d3033;
     font-weight: 700;
 }
 
 .feature-content > p {
-    margin-top:5px;
-    font-size: 14px;
+    margin-top: 5px;
+    font-size: 16px;
     line-height: 22.4px;
     color: #6c7279;
 }
@@ -234,10 +259,12 @@ body, html {
     cursor: default;
 
 }
-.icon-tools:hover{
+
+.icon-tools:hover {
     transform: rotate(360deg);
     transition: 1s all;
 }
+
 .icon-tools > i {
     color: #6600CC;
     font-size: 60px;
@@ -247,7 +274,7 @@ body, html {
 /*feature结束*/
 /*work开始*/
 #works {
-    padding: 0 100px;
+    padding: 0 80px;
 }
 
 .work {
@@ -255,6 +282,12 @@ body, html {
     border-bottom: 0;
     overflow: hidden;
     position: relative;
+}
+
+@media screen and (max-width: 768px) {
+    .work:nth-child(3) {
+        display: none;
+    }
 }
 
 .work .mask {
@@ -274,49 +307,52 @@ body, html {
     height: 100%;
     position: absolute;
     left: 0;
-    top:0
-
+    top: 0;
 }
 
 .mask .mask-tit {
     width: 100%;
-    position: absolute;
-    right: 0;
-    left: 0;
-    margin: 0 auto;
-    top: 40px;
+    margin-top: 25px;
     display: block;
     opacity: 1;
     color: #fff;
-    font-size: 32px;
+    font-size: 24px;
     text-align: center;
 }
 
 .mask .mask-nr {
     width: 100%;
-    position: absolute;
     display: block;
-    right: 0;
-    left: 0;
-    margin: 0 auto;
-    bottom: 40px;
     color: #fff;
-    font-size: 26px;
+    font-size: 18px;
     text-align: center;
+    margin-top: 10px;
 }
 
 .mask .mask-ms {
-    idth: 100%;
-    position: absolute;
+    width: 100%;
     display: block;
-    right: 0;
-    left: 0;
-    margin: 0 auto;
     top: 88px;
     color: #fff;
-    font-size: 18px;
+    font-size: 14px;
     padding: 0 30px;
     text-align: center;
+    margin-top: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .mask .mask-tit {
+        margin-top: 65px;
+    }
+
+    .mask .mask-ms {
+        margin-top: 40px;
+    }
+
+    .mask .mask-nr {
+        margin-top: 35px;
+    }
+
 }
 
 .work > a {
@@ -333,27 +369,14 @@ body, html {
     transition: .2s all;
 }
 
-@media screen and (max-width: 960px) {
-    .work-last-img {
-        display: none;
-    }
-}
-
 /*work结束*/
 /*team开始*/
 #teams {
-    padding: 0 100px;
+    padding: 0 80px;
 }
 
 .team {
     padding: 0 15px;
-}
-
-.person > img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    border: 0
 }
 
 .person-content {
@@ -364,7 +387,24 @@ body, html {
     padding-right: 10px;
     padding-left: 10px;
     background-color: #FBFBFB;
-    box-shadow: 2px 5px 25px 0px #ccc;
+    box-shadow: 2px 5px 25px 0 #ccc;
+    min-height: 280px;
+}
+
+@media screen and (max-width: 992px) {
+    .person-content {
+        min-height: 140px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .person-content {
+        min-height: 100px;
+    }
+
+    .team:nth-child(3), .team:nth-child(4) {
+        display: none;
+    }
 }
 
 .person-content:hover {
@@ -399,14 +439,13 @@ body, html {
 }
 
 .social-icons {
+    display: flex;
+    justify-content: space-around;
     margin: 30px 0 0;
 }
 
-.social-icons > li {
-    float: left;
-}
-
 .social-icons > li > a {
+    padding: 0 2px;
     border: 1px solid #e8ecee;
     border-radius: 2px;
     color: #c6cacc;
@@ -414,9 +453,8 @@ body, html {
     font-size: 18px;
     height: 40px;
     line-height: 40px;
-    margin-right: 5px;
     text-align: center;
-    width: 40px;
+    min-width: 30px;
 }
 
 /*team结束*/
@@ -447,6 +485,7 @@ body, html {
     font-size: 32px;
     height: 100%;
     width: 500px;
+    max-width: 500px;
 }
 
 .author {
@@ -459,10 +498,32 @@ body, html {
     margin-top: 30px;
 }
 
+@media screen and (max-width: 997px) {
+    .blockquote > p {
+        display: block;
+        color: #fff;
+        font-size: 25px;
+        height: 100%;
+        width: 350px;
+        max-width: 400px;
+    }
+
+    .blockquote {
+        padding: 3% 4% 2% 4%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #testimonials-text {
+        display: none;
+    }
+
+}
+
 /*testimonials结束*/
 /*down开始*/
 #download {
-    padding: 70px 100px 100px 100px;
+    padding: 70px 80px 70px;
 }
 
 .download {
@@ -504,7 +565,7 @@ body, html {
 /*faq-info开始*/
 #faq-info {
     background: #5900B3;
-    padding: 70px 100px 100px 100px
+    padding: 70px 80px 80px 70px
 }
 
 .img-responsive {
@@ -513,19 +574,25 @@ body, html {
     height: auto;
 }
 
-.faq-info > div {
+.faq-info > div > div {
     padding: 0 15px;
 }
 
-.faq-info > div:last-child > h2 {
+.faq-info > div > div:last-child > h2 {
     font-size: 50px;
     font-weight: 300;
     color: #fff;
     margin: 0 0 20px;
 }
 
-.faq-info > div:last-child > p {
-    color: #FFFFFF;
+@media screen and (max-width: 768px) {
+    .faq-info > div > div:last-child > h2 {
+        display: none;
+    }
+}
+
+.faq-info > div > div:last-child > p {
+    color: #fff;
     padding-top: 20px;
     padding-bottom: 20px;
     font-size: 15px;
@@ -533,7 +600,7 @@ body, html {
     margin: 0 0 10px;
 }
 
-.faq-info > div:last-child a.btn-load {
+.faq-info > div > div:last-child a.btn-load {
     background-color: #6600CC;
     color: #fff;
     font-size: 12px;
@@ -542,14 +609,14 @@ body, html {
     display: block;
     text-align: center;
     padding: 15px 40px;
-    margin: 30px 0px;
+    margin: 30px 0;
     max-width: 200px
 }
 
 /*faq-info结束*/
 /*contact开始*/
 #contact {
-    padding: 35px 100px;
+    padding: 35px 80px;
 }
 
 .contact > div {
@@ -608,7 +675,7 @@ body, html {
 /*foottop开始*/
 
 #footer-top {
-    padding: 50px 100px;
+    padding: 50px 80px;
     background: url(../img/texture.png);
 }
 
@@ -618,11 +685,10 @@ body, html {
 
 .footer-col {
     padding: 0 15px;
-    position: relative;
 }
 
 .footer-col > h5 {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     color: #fff;
     font-size: 14px;
     font-weight: 700;
@@ -640,41 +706,48 @@ body, html {
 }
 
 .footer-share {
+    width: 100%;
     position: absolute;
-    left: 50%;
-    margin-left: -85px;
+    display: flex;
+    justify-content: center;
 }
 
 .footer-share > li {
     display: inline-block;
     color: #fff;
     font-size: 18px;
-    height: 40px;
+    height: auto;
+    max-height: 40px;
     line-height: 40px;
     margin-right: 5px;
     text-align: center;
-    width: 40px;
-    float: left;
+    min-width: 40px;
     font-weight: 700;
     border-radius: 2px;
     border: 2px solid #e8ecee;
 }
 
+@media screen and (max-width: 768px) {
+    .footer-col:nth-child(2) {
+        display: none;
+    }
+}
+
 /*foottop结束*/
 /*footbottom开始*/
 #footer-bottom {
-    padding: 20px 100px;
+    padding: 20px 80px;
     background: #40357B;
 }
 
-.footer-bottom div p {
+.footer-bottom > div > div > p {
     font-size: 14px;
     color: rgba(255, 255, 255, 0.5);
     text-align: center;
     margin: 0 0 10px;
 }
 
-.footer-bottom div p a {
+.footer-bottom > div > div p a {
     color: #fff
 }
 

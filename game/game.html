@@ -197,8 +197,6 @@
             this.height = window.innerHeight;
             this.st = null;
             this.flag = true
-//            this.phb = phb;
-//            this.bastscor = localStorage.scor ? localStorage.scor : []
         }
 
         start() {
@@ -292,26 +290,7 @@
         }
 
         _gameover() {
-            alert(`游戏得分:${this.scornum}`)
-//            if (this.bastscor.length < 3 || this.scornum > this.bastscor[2].scor) {
-//                let name;
-//                do {
-//                    name = prompt("请输入姓名")
-//                } while (name === "")
-//            }
-//            this.bastscor.push({name, scor: this.scornum})
-//            this.bastscor.sort(function (a, b) {
-//                if (a.scor > b.scor) {
-//                    return -1
-//                } else {
-//                    return 1
-//                }
-//            })
-//            if (this.bastscor.length < 3) {
-//                this.bastscor.pop()
-//            }
-//            localStorage.scor = JSON.stringify(this.bastscor)
-
+            alert(`游戏得分:${this.scornum}`);
             this.left.innerHTML = "";
             this.obj = {};
             this.scornum = 0;
@@ -324,9 +303,6 @@
             clearInterval(this.st);
             this.flag = true
         }
-
-//        _updatephb(){
-//        }
 
         _pause() {
             clearInterval(this.st)

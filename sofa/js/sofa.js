@@ -58,28 +58,4 @@
     })
 }
 
-// 选项卡效果
-// {
-//     const rank = document.querySelectorAll(".rank-item-title")
-//     const rankinner = document.querySelectorAll(".rank-item-inner")
-//     // const rankbox=document.querySelectorAll(".rank-item")
-//     const navline = document.querySelectorAll(".nav-tabs .nav-line")
-//     const navtabs = document.querySelectorAll(".nav-tabs>div")
-//
-//     rank.forEach(function (ele, index) {
-//         ele.onmouseover = function () {
-//             rankinner[index].classList.add("active")
-//         }
-//         ele.onmouseout = function () {
-//             rankinner[index].classList.remove("active");
-//         }
-//     })
-//
-//     navtabs.forEach(function (ele, index) {
-//         ele.onmouseover = function () {
-//             navline[index].classList.add("active")
-//         }
-//     })
-// }
-
 
