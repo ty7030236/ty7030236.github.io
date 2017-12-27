@@ -236,7 +236,7 @@ body, html {
     padding: 0 15px;
     margin-top: 30px;
     text-align: center;
-    max-height: 80px;
+    min-height: 70px;
 }
 
 .feature-content > h5 {
@@ -284,11 +284,11 @@ body, html {
     position: relative;
 }
 
-@media screen and (max-width: 768px) {
-    .work:nth-child(3) {
-        display: none;
-    }
-}
+/*@media screen and (max-width: 768px) {*/
+    /*.work:nth-child(3) {*/
+        /*display: none;*/
+    /*}*/
+/*}*/
 
 .work .mask {
     position: absolute;
@@ -393,13 +393,13 @@ body, html {
 
 @media screen and (max-width: 992px) {
     .person-content {
-        min-height: 140px;
+        min-height: 150px;
     }
 }
 
 @media screen and (max-width: 768px) {
     .person-content {
-        min-height: 100px;
+        min-height: 150px;
     }
 
     .team:nth-child(3), .team:nth-child(4) {
@@ -461,7 +461,7 @@ body, html {
 /*testimonials开始*/
 
 #testimonisls {
-    padding: 100px;
+    padding: 80px;
 }
 
 .testimonisls {
@@ -523,7 +523,7 @@ body, html {
 /*testimonials结束*/
 /*down开始*/
 #download {
-    padding: 70px 80px 70px;
+    padding: 70px 60px 70px;
 }
 
 .download {
@@ -565,7 +565,7 @@ body, html {
 /*faq-info开始*/
 #faq-info {
     background: #5900B3;
-    padding: 70px 80px 80px 70px
+    padding: 70px 60px 70px
 }
 
 .img-responsive {
@@ -616,7 +616,7 @@ body, html {
 /*faq-info结束*/
 /*contact开始*/
 #contact {
-    padding: 35px 80px;
+    padding: 35px 50px;
 }
 
 .contact > div {
@@ -663,7 +663,7 @@ body, html {
     display: block;
     text-align: center;
     padding: 15px 40px;
-    margin: 30px 0px;
+    margin: 30px 0;
     max-width: 200px;
     border: 1px solid #6600CC;
     cursor: pointer;
@@ -675,7 +675,7 @@ body, html {
 /*foottop开始*/
 
 #footer-top {
-    padding: 50px 80px;
+    padding: 50px 50px;
     background: url(../img/texture.png);
 }
 
