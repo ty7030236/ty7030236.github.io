@@ -126,6 +126,12 @@ body, html {
     text-align: center;
 }
 
+@media screen and (max-width: 768px) {
+    .banner-text > h1 {
+        font-size: 38px;
+    }
+}
+
 .banner-text > h3 {
     font-size: 28px;
     color: #B0ABD3;
@@ -284,11 +290,11 @@ body, html {
     position: relative;
 }
 
-/*@media screen and (max-width: 768px) {*/
-    /*.work:nth-child(3) {*/
-        /*display: none;*/
-    /*}*/
-/*}*/
+@media screen and (max-width: 768px) {
+    .work {
+        margin-bottom: 10px;
+    }
+}
 
 .work .mask {
     position: absolute;
@@ -444,6 +450,12 @@ body, html {
     margin: 30px 0 0;
 }
 
+@media screen and (max-width: 768px) {
+    .social-icons {
+        margin: 15px 0 0;
+    }
+}
+
 .social-icons > li > a {
     padding: 0 2px;
     border: 1px solid #e8ecee;
@@ -467,6 +479,11 @@ body, html {
 .testimonisls {
     position: relative;
     background: #333399;
+}
+
+.testimonisls-ul li {
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .testimonisls ul li:first-child > img {
@@ -679,6 +696,12 @@ body, html {
     background: url(../img/texture.png);
 }
 
+@media screen and (max-width: 768px) {
+    #footer-top {
+        padding: 0;
+    }
+}
+
 .footer-top {
     padding: 0 15px;
 }
@@ -738,6 +761,12 @@ body, html {
 #footer-bottom {
     padding: 20px 80px;
     background: #40357B;
+}
+
+@media screen and (max-width: 768px) {
+    #footer-bottom {
+        padding: 0;
+    }
 }
 
 .footer-bottom > div > div > p {

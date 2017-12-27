@@ -1,14 +1,18 @@
 /*所有网站通用*/
-body,h1,h2,h3,h4,h5,h6,p,ul,li,dl,dt,dd,input {
-	margin:0;
-	padding:0;
-	font-family: Arial,"微软雅黑";
-	list-style:none;
+html, body, h1, h2, h3, h4, h5, h6, p, ul, li, dl, dt, dd, input {
+    /*width: 100%;*/
+    /*height: auto;*/
+    margin: 0;
+    padding: 0;
+    font-family: Arial, "微软雅黑";
+    list-style: none;
 }
-a{
-	text-decoration:none;
-	color:#999;
+
+a {
+    text-decoration: none;
+    color: #999;
 }
-img{
-	border:none;
+
+img {
+    border: none;
 }
