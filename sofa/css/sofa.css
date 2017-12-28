@@ -1276,6 +1276,7 @@ input {
     height: 100%;
     margin: 0 auto;
     background-color: #303031;
+    padding:  3.25px 10px
 }
 
 .footer-friend-links {
