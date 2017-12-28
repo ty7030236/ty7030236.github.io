@@ -33,10 +33,12 @@ a {
     position: fixed;
     top: 0;
     z-index: 9999;
+
 }
 
 .warp {
     width: 1200px;
+    height:60px;
     margin: 0 auto;
     position: relative;
 }
@@ -46,7 +48,7 @@ a {
     height: 33px;
     float: left;
     position: absolute;
-    left: 0;
+    left: 20px;
     top: 12px;
     z-index: 2;
 }
@@ -56,7 +58,7 @@ a {
     height: 60px;
     line-height: 60px;
     position: absolute;
-    right: 0;
+    right: 20px;
 }
 
 .header .nav ul {
@@ -177,6 +179,10 @@ a {
     float: left;
 }
 
+.foot-l p {
+    padding-left:20px ;
+}
+
 .foot-l p, .foot-l p a {
     color: #fff;
     line-height: 25px;
@@ -186,6 +192,7 @@ a {
     width: 50%;
     text-align: right;
     float: right;
+    padding-right: 20px;
 }
 
 .foot-r li {
@@ -207,7 +214,6 @@ a {
 
 .foot-r li a img {
     display: block;
-    height: 40px;
     height: 40px;
     position: absolute;
     left: 0;
