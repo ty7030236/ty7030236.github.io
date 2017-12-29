@@ -739,7 +739,7 @@ html, body {
     color: #333
 }
 
-.home-mian-last {
+.home-main-last {
     width: 234px;
     height: 142px;
     background: #fff;
@@ -747,15 +747,15 @@ html, body {
     position: relative;
 }
 
-#mian-last-one {
+#main-last-one {
     margin-bottom: 14px;
 }
 
-#mian-last-two {
+#main-last-two {
     position: relative;
 }
 
-#mian-last-two i {
+#main-last-two i {
     font-size: 52px;
     color: #FF6700;
     position: absolute;
@@ -785,7 +785,7 @@ html, body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.home-mian-last > a {
+.home-main-last > a {
     margin-top: 40px;
     display: block;
     color: #333;
@@ -794,7 +794,7 @@ html, body {
 
 }
 
-.home-mian-last > p {
+.home-main-last > p {
     display: block;
     color: #ff8263;
     font-size: 14px;
@@ -802,7 +802,7 @@ html, body {
     margin-left: 28px;
 }
 
-#mian-last-one img {
+#main-last-one img {
     width: 80px;
     height: 80px;
     float: right;
@@ -812,11 +812,11 @@ html, body {
 
 }
 
-#mian-last-two a {
+#main-last-two a {
     font-size: 20px;
 }
 
-#mian-last-two p {
+#main-last-two p {
     color: #777;
 }
 
@@ -1439,11 +1439,10 @@ html, body {
 }
 
 .slogan {
-    margin: 0 auto;
+    margin: 30px auto 0;
     text-align: center;
     width: 290px;
     height: 19px;
-    margin-top: 30px;
     font-family: "楷体_GB2312";
     font-size: 20px;
     color: #ccc
